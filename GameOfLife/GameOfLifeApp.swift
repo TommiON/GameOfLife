@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct GameOfLifeApp: App {
+    init() {
+    
+        print("Alustetaan... ")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

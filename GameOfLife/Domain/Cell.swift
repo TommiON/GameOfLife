@@ -8,5 +8,5 @@
 import Foundation
 
 struct Cell {
-    var alive: Bool
+    let alive: Bool
 }
