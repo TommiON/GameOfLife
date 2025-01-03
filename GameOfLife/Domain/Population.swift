@@ -1,5 +1,5 @@
 //
-//  Generation.swift
+//  Population.swift
 //  GameOfLife
 //
 //  Created by Tommi Niittymies on 25.12.2024.
@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct Generation {
-    let ordinal: Int
+struct Population {
     var cells: [[Cell]]
-    
-    
+    let generation: Int
 }

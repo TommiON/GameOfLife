@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    // kaikki initialsointi App-vanhempaan, sieltä parametreinä tänne?
+    @State var world = World()
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
-            Text("Terve, maailma!")
+            Text("Maailman mitat: \($world.width.wrappedValue) x \($world.height.wrappedValue)")
         }
         .padding()
     }

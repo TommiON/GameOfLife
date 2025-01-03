@@ -7,6 +7,9 @@
 
 import Foundation
 
+// tätä koko roskaa ei ehkä tarvitakaan?
 public func setup() {
-    
+    print("Setup: alustetaan...")
+    // var world = World()
+    // print("heräämiskriteeri: ", world.cellBecomesAliveWithNeighborsCount)
 }

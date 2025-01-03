@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct World {
-    var width = 30
-    var height = 30
+class World: ObservableObject {
+    @Published var width: Int = 50
+    @Published var height: Int = 40
+    @Published var cellStaysAliveWithNeighborsCount: ClosedRange<Int> = 2...3
+    @Published var cellBecomesAliveWithNeighborsCount: ClosedRange<Int> = 3...3
     
-    init(customWidth: Int, customHeight: Int) {
-        width = customWidth
-        height = customHeight
-    }
+    // tee init()
 }
