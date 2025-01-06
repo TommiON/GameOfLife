@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct GameOfLifeApp: App {
     init() {
-        setup()
+        //
     }
     
     var body: some Scene {

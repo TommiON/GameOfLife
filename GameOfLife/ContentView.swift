@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    // kaikki initialsointi App-vanhempaan, sieltä parametreinä tänne?
-    @State var world = World()
+    @ObservedObject var viewModel = WorldViewModel()
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Maailman mitat: \($world.width.wrappedValue) x \($world.height.wrappedValue)")
+            Form{
+                TextField("Maailman leveys", value:$viewModel.width,
+                    format: .number)
+                TextField("Maailman korkeus", value:$viewModel.height,
+                    format: .number)
+                Button("Luo maailma",
+                       action: {viewModel.createWorld()})
+            }
+            Text("Maailman mitat: \($viewModel.width.wrappedValue) x \($viewModel.height.wrappedValue)")
         }
         .padding()
     }
