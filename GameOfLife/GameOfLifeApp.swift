@@ -9,13 +9,14 @@ import SwiftUI
 
 @main
 struct GameOfLifeApp: App {
-    init() {
-        //
-    }
+    // @State var world: World?
+    // jotenkin niin, että tässä ylimmällä tasolla luodaan (tyhjä) World, sen jälkeen SetupView(Model) antaa sille parametrit
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TestiContentView()
+
+            SetupView()
         }
     }
 }

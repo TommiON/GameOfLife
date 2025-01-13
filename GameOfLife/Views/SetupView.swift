@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @ObservedObject var viewModel = WorldViewModel()
+struct SetupView: View {
+    @ObservedObject var viewModel = SetupViewModel()
+    //@State var viewModel = WorldViewModel()
+    //alempi ei päivitä TextFieldeja lennossa, selvitä itsellesi tämä ero
+
     
     var body: some View {
         VStack {
@@ -30,5 +33,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SetupView()
 }

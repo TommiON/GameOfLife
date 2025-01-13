@@ -1,8 +1,8 @@
 import Foundation
 
-struct World {
-    var width: Int
-    var height: Int
+@Observable class World {
+    var width: Int = 100
+    var height: Int = 70
     let cellStaysAliveWithNeighborsCount: ClosedRange<Int> = 2...3
     let cellBecomesAliveWithNeighborsCount: ClosedRange<Int> = 3...3
 
