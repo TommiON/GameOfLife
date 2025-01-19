@@ -8,30 +8,24 @@
 import SwiftUI
 
 struct SetupView: View {
-    @ObservedObject var viewModel = SetupViewModel()
-    //@State var viewModel = WorldViewModel()
-    //alempi ei päivitä TextFieldeja lennossa, selvitä itsellesi tämä ero
-
+    //@ObservedObject var worldViewModel: WorldViewModel
+    @Environment(World.self) var worldConfig: World
+    @State var setupWidth: Int = 100
+    @State var setupHeight: Int = 80
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
             Form{
-                TextField("Maailman leveys", value:$viewModel.width,
-                    format: .number)
-                TextField("Maailman korkeus", value:$viewModel.height,
-                    format: .number)
+                TextField("Maailman leveys", value: $setupWidth, format: .number)
+                TextField("Maailman korkeus", value: $setupHeight, format: .number)
                 Button("Luo maailma",
-                       action: {viewModel.createWorld()})
+                       action: { worldConfig.setupDimensions(width: setupWidth, height: setupHeight) })
             }
-            Text("Maailman mitat: \($viewModel.width.wrappedValue) x \($viewModel.height.wrappedValue)")
         }
         .padding()
     }
 }
 
 #Preview {
-    SetupView()
+    //SetupView()
 }

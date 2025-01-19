@@ -1,13 +1,18 @@
 import Foundation
 
 @Observable class World {
-    var width: Int = 100
-    var height: Int = 70
+    /*
+     Ei @Published-annotaatiota muuttujille?
+     https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
+     */
+    var width: Int = 0
+    var height: Int = 0
     let cellStaysAliveWithNeighborsCount: ClosedRange<Int> = 2...3
     let cellBecomesAliveWithNeighborsCount: ClosedRange<Int> = 3...3
-
-    init(withWidth: Int, withHeigth: Int) {
-        width = withWidth
-        height = withHeigth
+    
+    func setupDimensions(width: Int, height: Int) {
+        self.width = width
+        self.height = height
+        print("Maailma on nytten \(width) x \(height)")
     }
 }
