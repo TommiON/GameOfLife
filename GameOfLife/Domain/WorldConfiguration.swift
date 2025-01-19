@@ -1,6 +1,6 @@
 import Foundation
 
-@Observable class World {
+@Observable class WorldConfiguration {
     /*
      Ei @Published-annotaatiota muuttujille?
      https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
