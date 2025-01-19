@@ -9,15 +9,14 @@ import SwiftUI
 
 struct MainView: View {
     //@ObservedObject var worldViewModel: WorldViewModel
-    @Environment(World.self) private var worldConfig: World
+    @Environment(WorldConfiguration.self) private var worldConfig: WorldConfiguration
     @Environment(AppStatus.self) private var appStatus: AppStatus
+    @State private var temp = 666
     
     var body: some View {
         VStack {
-            Form{
-                Text("Maailman mitat, ihan toinen view: \(worldConfig.width) x \(worldConfig.height)")
-               
-            }
+            StatusView().environment(appStatus)
+            PopulationView().environment(worldConfig)
         }
         .padding()
     }

@@ -9,4 +9,5 @@ import Foundation
 
 @Observable class AppStatus {
     var isSetup: Bool = false
+    var currentGeneration: Int = 0
 }

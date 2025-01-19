@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct StatusView: View {
+    @Environment(AppStatus.self) private var appStatus: AppStatus
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Sukupolvi: \(appStatus.currentGeneration)")
     }
 }
 
 #Preview {
-    StatusView()
+    //StatusView()
 }

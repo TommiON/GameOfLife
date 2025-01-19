@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SetupView: View {
     //@ObservedObject var worldViewModel: WorldViewModel
-    @Environment(World.self) var worldConfig: World
+    @Environment(WorldConfiguration.self) var worldConfig: WorldConfiguration
     @Environment(AppStatus.self) var appStatus: AppStatus
     @State var setupWidth: Int = 100
     @State var setupHeight: Int = 80
@@ -23,6 +23,7 @@ struct SetupView: View {
                        action: {
                             worldConfig.setupDimensions(width: setupWidth, height: setupHeight)
                             appStatus.isSetup = true
+                            appStatus.currentGeneration = 1
                 })
             }
         }
