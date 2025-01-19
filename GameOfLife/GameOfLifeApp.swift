@@ -10,11 +10,19 @@ import SwiftUI
 @main
 struct GameOfLifeApp: App {
     @State private var world = World()
+    @State private var appStatus = AppStatus()
     
     var body: some Scene {
         WindowGroup {
-            SetupView().environment(world)
-            MainView().environment(world)
+            if (!appStatus.isSetup) {
+                SetupView()
+                    .environment(world)
+                    .environment(appStatus)
+            } else {
+                MainView()
+                    .environment(world)
+                    .environment(appStatus)
+            }
         }
     }
 }

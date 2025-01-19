@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     //@ObservedObject var worldViewModel: WorldViewModel
     @Environment(World.self) private var worldConfig: World
+    @Environment(AppStatus.self) private var appStatus: AppStatus
     
     var body: some View {
         VStack {
