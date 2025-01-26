@@ -11,7 +11,7 @@ struct StatusView: View {
     @Environment(AppStatus.self) private var appStatus: AppStatus
     
     var body: some View {
-        Text("Sukupolvi: \(appStatus.currentGeneration)")
+        Text("\(appStatus.statusText)")
     }
 }
 

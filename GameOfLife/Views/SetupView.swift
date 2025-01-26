@@ -23,7 +23,7 @@ struct SetupView: View {
                        action: {
                             worldConfig.setupDimensions(width: setupWidth, height: setupHeight)
                             appStatus.isSetup = true
-                            appStatus.currentGeneration = 1
+                            appStatus.statusText = "Klikkaa ne solut, jotka haluat eläviksi"
                 })
             }
         }

@@ -16,7 +16,11 @@ struct MainView: View {
     var body: some View {
         VStack {
             StatusView().environment(appStatus)
-            PopulationView().environment(worldConfig)
+            if (!appStatus.genesisHasHappened) {
+                GenesisView().environment(worldConfig).environment(appStatus)
+            } else {
+                PopulationView().environment(worldConfig).environment(appStatus)
+            }
         }
         .padding()
     }

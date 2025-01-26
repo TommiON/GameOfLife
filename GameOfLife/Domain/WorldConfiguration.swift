@@ -13,6 +13,5 @@ import Foundation
     func setupDimensions(width: Int, height: Int) {
         self.width = width
         self.height = height
-        print("Maailma on nytten \(width) x \(height)")
     }
 }
